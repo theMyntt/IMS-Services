@@ -1,0 +1,5 @@
+Start-Process "dotnet" -ArgumentList "run --project ./src/Services/Users.API/Users.API.csproj"
+Start-Process "dotnet" -ArgumentList "run --project ./src/Services/Items.API/Items.API.csproj"
+Start-Process "dotnet" -ArgumentList "run --project ./src/Services/Movement.API/Movement.API.csproj"
+Start-Process "dotnet" -ArgumentList "run --project ./src/Services/Reports.API/Reports.API.csproj"
+Start-Process "dotnet" -ArgumentList "run --project ./src/Gateway/Bridge.API/Bridge.API.csproj"
