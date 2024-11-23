@@ -671,3 +671,5 @@ fabric.properties
 # End of https://www.toptal.com/developers/gitignore/api/csharp,visualstudio,jetbrains+all
 
 .DS_Store
+.env*
+!.env.example
