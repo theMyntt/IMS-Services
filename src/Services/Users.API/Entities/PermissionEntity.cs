@@ -22,4 +22,6 @@ public class PermissionEntity
     
     [Column("TX_LAST_UPDATE")]
     public DateTime? UpdatedAt { get; set; }
+    
+    public ICollection<UserPermissionsEntity> UsersPermissions { get; set; }
 }
