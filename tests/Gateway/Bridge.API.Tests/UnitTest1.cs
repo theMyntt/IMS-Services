@@ -1,4 +1,4 @@
-namespace Brigde.API.Tests;
+namespace Bridge.API.Tests;
 
 public class UnitTest1
 {
