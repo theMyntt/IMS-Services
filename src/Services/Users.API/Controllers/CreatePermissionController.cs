@@ -4,6 +4,7 @@ using Users.API.UseCases.Abstractions;
 
 namespace Users.API.Controllers;
 
+[Tags("Permissions Management")]
 [Route("/permission")]
 [ApiController]
 public class CreatePermissionController : ControllerBase
