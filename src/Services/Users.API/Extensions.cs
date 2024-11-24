@@ -2,6 +2,8 @@ using DotNetEnv;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Users.API.Context;
+using Users.API.Repositories;
+using Users.API.Repositories.Abstractions;
 
 namespace Users.API;
 
@@ -14,6 +16,13 @@ public static class Extensions
         services.AddDbContext<DatabaseContext>(
             options => options.UseSqlServer(
                 m => m.MigrationsAssembly(typeof(DatabaseContext).Assembly.FullName)));
+        
+        return services;
+    }
+
+    public static IServiceCollection AddRepositories(this IServiceCollection services)
+    {
+        services.AddScoped<IPermissionsRepository, PermissionsRepository>();
         
         return services;
     }
