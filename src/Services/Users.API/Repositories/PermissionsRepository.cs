@@ -29,9 +29,9 @@ public class PermissionsRepository : IPermissionsRepository
         await _context.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(int id)
+    public async Task DeleteAsync(string code)
     {
-        var permission = await _context.Permissions.FirstOrDefaultAsync(u => u.Id == id);
+        var permission = await _context.Permissions.FirstOrDefaultAsync(u => u.Code == code);
 
         if (permission == null) throw new PermissionNotExistException();
 
