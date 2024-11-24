@@ -25,6 +25,8 @@ public class CreatePermissionUseCase : ICreatePermissionUseCase
         try
         {
             await _repository.CreateAsync(entity);
+
+            return new StandardResponse("Created.", "Created", 201);
         }
         catch (PermissionAlreadyExistException e)
         {
@@ -34,7 +36,5 @@ public class CreatePermissionUseCase : ICreatePermissionUseCase
         {
             return new StandardResponse(e.Message, "InternalServerErrorException", 500);
         }
-        
-        throw new NotImplementedException();
     }
 }
