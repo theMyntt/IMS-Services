@@ -12,6 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDatabase();
 builder.Services.AddRepositories();
+builder.Services.AddUseCases();
 
 var app = builder.Build();
 

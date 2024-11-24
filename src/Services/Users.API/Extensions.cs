@@ -4,6 +4,8 @@ using Microsoft.Extensions.Configuration;
 using Users.API.Context;
 using Users.API.Repositories;
 using Users.API.Repositories.Abstractions;
+using Users.API.UseCases;
+using Users.API.UseCases.Abstractions;
 
 namespace Users.API;
 
@@ -23,6 +25,13 @@ public static class Extensions
     public static IServiceCollection AddRepositories(this IServiceCollection services)
     {
         services.AddScoped<IPermissionsRepository, PermissionsRepository>();
+        
+        return services;
+    }
+
+    public static IServiceCollection AddUseCases(this IServiceCollection services)
+    {
+        services.AddScoped<ICreatePermissionUseCase, CreatePermissionUseCase>();
         
         return services;
     }
