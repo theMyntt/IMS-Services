@@ -34,6 +34,7 @@ public static class Extensions
     {
         services.AddScoped<ICreatePermissionUseCase, CreatePermissionUseCase>();
         services.AddScoped<IEditPermissionUseCase, EditPermissionUseCase>();
+        services.AddScoped<IDeletePermissionUseCase, DeletePermissionUseCase>();
         
         return services;
     }
