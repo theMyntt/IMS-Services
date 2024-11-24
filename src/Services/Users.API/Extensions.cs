@@ -33,6 +33,7 @@ public static class Extensions
     public static IServiceCollection AddUseCases(this IServiceCollection services)
     {
         services.AddScoped<ICreatePermissionUseCase, CreatePermissionUseCase>();
+        services.AddScoped<IEditPermissionUseCase, EditPermissionUseCase>();
         
         return services;
     }
