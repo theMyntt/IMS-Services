@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Users.API.Context;
 using Users.API.Entities;
+using Users.API.Exceptions;
 using Users.API.Repositories.Abstractions;
 
 namespace Users.API.Repositories;
@@ -27,7 +28,7 @@ public class PermissionsRepository : IPermissionsRepository
     {
         var permission = await _context.Permissions.FirstOrDefaultAsync(u => u.Id == id);
 
-        if (permission == null) throw new Exception();
+        if (permission == null) throw new PermissionNotExistException();
 
         _context.Permissions.Remove(permission);
         await _context.SaveChangesAsync();
