@@ -8,5 +8,5 @@ public interface IPermissionsRepository
     Task UpdateAsync(PermissionEntity entity);
     Task DeleteAsync(int id);
     Task<IEnumerable<PermissionEntity>> GetAsync(int limit, int page);
-    Task<IEnumerable<PermissionEntity>> GetAsync(string name);
+    Task<IEnumerable<PermissionEntity>> GetAsync(string name, string? code);
 }

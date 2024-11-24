@@ -47,10 +47,10 @@ public class PermissionsRepository : IPermissionsRepository
             .ToListAsync();
     }
 
-    public async Task<IEnumerable<PermissionEntity>> GetAsync(string name)
+    public async Task<IEnumerable<PermissionEntity>> GetAsync(string name, string? code)
     {
         return await _context.Permissions
-            .Where(u => EF.Functions.Like(u.Name.ToLower(), $"{name.Trim().ToLower()}%"))
+            .Where(u => EF.Functions.Like(u.Name.ToLower(), $"{name.Trim().ToLower()}%") || u.Code == code)
             .ToListAsync();
     }
 }
