@@ -17,6 +17,7 @@ public static class Extensions
         
         services.AddDbContext<DatabaseContext>(
             options => options.UseSqlServer(
+                connection,
                 m => m.MigrationsAssembly(typeof(DatabaseContext).Assembly.FullName)));
         
         return services;
