@@ -9,7 +9,7 @@ public class PermissionEntity
     [Key]
     [Column("ID_PERMISSION")]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public required int Id { get; set; }
+    public int Id { get; set; }
     
     [Column("TX_NAME")]
     public required string Name { get; set; }
