@@ -14,6 +14,11 @@ public class PermissionsRepository : IPermissionsRepository
     
     public async Task CreateAsync(PermissionEntity entity)
     {
+        var alreadyExists = await _context.Permissions.FirstOrDefaultAsync(u => u.Name.ToLower() == entity.Name.ToLower());
+
+        if (alreadyExists != null)
+            throw new PermissionAlreadyExistException();
+                        
         await _context.Permissions.AddAsync(entity);
         await _context.SaveChangesAsync();
     }
